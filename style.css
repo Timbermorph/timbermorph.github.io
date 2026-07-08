@@ -31,7 +31,7 @@ body {
   color: var(--text);
   font-family: var(--serif);
   line-height: 1.6;
-  font-size: 17px;
+  font-size: 19px;
   overflow-wrap: break-word;
 }
 
@@ -58,7 +58,7 @@ a:hover { border-bottom-color: currentColor; }
   flex-wrap: wrap;
   gap: 12px 24px;
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: .04em;
   text-transform: uppercase;
 }
@@ -73,7 +73,7 @@ main {
 section { margin-bottom: 56px; }
 section h2 {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: .08em;
   color: var(--muted);
@@ -102,7 +102,7 @@ section h2 {
 
 .hero-text h1 {
   margin: 0 0 4px;
-  font-size: 32px;
+  font-size: 38px;
 }
 
 .title {
@@ -110,28 +110,36 @@ section h2 {
   font-family: var(--sans);
   font-weight: 600;
   color: var(--text);
+  font-size: 19px;
 }
 
 .affiliation {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 17px;
 }
 
-.links {
+.icon-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  font-family: var(--sans);
-  font-size: 14px;
+  gap: 16px;
 }
-.links a { border-bottom: 1px solid var(--border); }
+.icon-links a {
+  display: flex;
+  color: var(--muted);
+  border-bottom: none;
+}
+.icon-links a:hover { color: var(--accent); }
+.icon-links svg {
+  width: 24px;
+  height: 24px;
+}
 
 .bio p { margin: 0 0 14px; }
-.interests { color: var(--muted); font-size: 15px; }
+.interests { color: var(--muted); font-size: 17px; }
 
 .pub {
   padding-bottom: 20px;
@@ -142,20 +150,20 @@ section h2 {
 
 .pub h3 {
   margin: 0 0 6px;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .pub .authors {
   margin: 0 0 4px;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--muted);
 }
 
 .pub .venue {
   margin: 0 0 6px;
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
   color: var(--muted);
 }
@@ -163,7 +171,7 @@ section h2 {
 .pub-links {
   margin: 0;
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: .03em;
 }
@@ -183,13 +191,11 @@ section h2 {
 
 .year {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   flex-shrink: 0;
-  width: 42px;
+  width: 78px;
 }
-
-#contact p { color: var(--muted); }
 
 footer {
   max-width: var(--max-width);
@@ -207,5 +213,5 @@ footer {
     text-align: left;
   }
   .portrait { width: 120px; height: 120px; }
-  .hero-text h1 { font-size: 26px; }
+  .hero-text h1 { font-size: 30px; }
 }
