@@ -159,7 +159,8 @@ section h2 {
   display: block;
   width: 190px;
   height: 130px;
-  object-fit: cover;
+  object-fit: contain;
+  background: color-mix(in srgb, var(--border) 32%, var(--bg));
   border-radius: 6px;
   border: 1px solid var(--border);
 }
@@ -192,6 +193,26 @@ section h2 {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: .03em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pub-links a {
+  border-bottom: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+.pub-links a:hover {
+  border-color: currentColor;
+}
+
+.pub-links .project-link {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
 }
 
 .news-list {
