@@ -85,9 +85,9 @@
     <h2>Publications</h2>
 
     <article class="pub">
-      <a class="pub-thumb-link" href="https://chenxshuo.github.io/true-micl-colm/">
+      <button class="pub-thumb-button" type="button" aria-label="Open teaser image for True Multimodal In-Context Learning Needs Attention to the Visual Context">
         <img class="pub-thumb" src="images/pub-colm.jpg" alt="" loading="lazy">
-      </a>
+      </button>
       <div class="pub-body">
         <h3>True Multimodal In-Context Learning Needs Attention to the Visual Context</h3>
         <p class="authors"><a href="https://chenxshuo.github.io/">Shuo Chen</a>, <strong>Jianzhe Liu</strong>, <a href="https://sites.google.com/view/zhen-han">Zhen Han</a>, <a href="https://yan-xia.github.io/">Yan Xia</a>, <a href="https://vision.in.tum.de/members/cremers">Daniel Cremers</a>, <a href="https://torrvision.com/">Philip Torr</a>, <a href="https://tresp-lab.github.io/">Volker Tresp</a>, <a href="https://jindonggu.github.io/">Jindong Gu</a></p>
@@ -97,9 +97,9 @@
     </article>
 
     <article class="pub">
-      <a class="pub-thumb-link" href="https://chenxshuo.github.io/m-icl/">
+      <button class="pub-thumb-button" type="button" aria-label="Open teaser image for Can Multimodal Large Language Models Truly Perform Multimodal In-Context Learning?">
         <img class="pub-thumb" src="images/pub-wacv.jpg" alt="" loading="lazy">
-      </a>
+      </button>
       <div class="pub-body">
         <h3>Can Multimodal Large Language Models Truly Perform Multimodal In-Context Learning?</h3>
         <p class="authors"><a href="https://chenxshuo.github.io/">Shuo Chen</a>, <a href="https://sites.google.com/view/zhen-han">Zhen Han</a>, Bailan He, <strong>Jianzhe Liu</strong>, Mark Buckley, <a href="https://yaoqin1.github.io/">Yao Qin</a>, <a href="https://torrvision.com/">Philip Torr</a>, <a href="https://www.dbs.ifi.lmu.de/cms/personen/professoren/tresp/">Volker Tresp</a>, <a href="https://jindonggu.github.io/">Jindong Gu</a></p>
@@ -109,9 +109,9 @@
     </article>
 
     <article class="pub">
-      <a class="pub-thumb-link" href="https://vqd-emnlp2024.github.io/">
+      <button class="pub-thumb-button" type="button" aria-label="Open teaser image for Visual Question Decomposition on Multimodal Large Language Models">
         <img class="pub-thumb" src="images/pub-emnlp.jpg" alt="" loading="lazy">
-      </a>
+      </button>
       <div class="pub-body">
         <h3>Visual Question Decomposition on Multimodal Large Language Models</h3>
         <p class="authors">Haowei Zhang, <strong>Jianzhe Liu</strong>, <a href="https://sites.google.com/view/zhen-han">Zhen Han</a>, <a href="https://chenxshuo.github.io/">Shuo Chen</a>, Bailan He, <a href="https://www.dbs.ifi.lmu.de/cms/personen/professoren/tresp/">Volker Tresp</a>, <a href="https://scholar.google.com/citations?user=o2z82ZUAAAAJ">Zhiqiang Xu</a>, <a href="https://jindonggu.github.io/">Jindong Gu</a></p>
@@ -123,9 +123,46 @@
 
 </main>
 
+<div class="image-lightbox" id="image-lightbox" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
+  <img class="lightbox-image" alt="">
+</div>
+
 <footer>
   <p>&copy; 2026 Jianzhe Liu. Built with plain HTML &amp; CSS.</p>
 </footer>
+
+<script>
+  const lightbox = document.querySelector("#image-lightbox");
+  const lightboxImage = lightbox.querySelector(".lightbox-image");
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightboxImage.removeAttribute("src");
+    document.body.classList.remove("lightbox-open");
+  };
+
+  document.querySelectorAll(".pub-thumb-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const image = button.querySelector("img");
+      lightboxImage.src = image.src;
+      lightboxImage.alt = button.getAttribute("aria-label").replace("Open teaser image for ", "");
+      lightbox.hidden = false;
+      document.body.classList.add("lightbox-open");
+    });
+  });
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox || event.target.classList.contains("lightbox-close")) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
+</script>
 
 </body>
 </html>
