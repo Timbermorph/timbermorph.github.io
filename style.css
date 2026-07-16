@@ -143,9 +143,9 @@ section h2 {
 
 .pub {
   display: flex;
-  gap: 24px;
-  padding-bottom: 24px;
-  margin-bottom: 24px;
+  gap: 28px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
   border-bottom: 1px solid var(--border);
 }
 .pub:last-child { border-bottom: none; }
@@ -157,8 +157,8 @@ section h2 {
 
 .pub-thumb {
   display: block;
-  width: 190px;
-  height: 130px;
+  width: 280px;
+  height: 165px;
   object-fit: contain;
   background: color-mix(in srgb, var(--border) 32%, var(--bg));
   border-radius: 6px;
